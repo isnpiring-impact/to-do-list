@@ -1,21 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do List</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Switcher</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      transition: background-color 0.5s ease;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>To-Do List</h1>
-        <div class="input-group">
-            <input type="text" id="task-input" placeholder="Add a new task">
-            <button id="add-btn">Add Task</button>
-        </div>
-        <div id="tasks"></div>
-    </div>
+  <button id="toggle-btn">Change Background</button>
 
-    <script src="script.js"></script>
+  <script>
+    document.getElementById('toggle-btn').addEventListener('click', function() {
+      document.body.style.backgroundColor = '#'+Math.floor(Math.random()*0xFFFFFF).toString(16).padStart(6, '0');
+    });
+  </script>
 </body>
 </html>
